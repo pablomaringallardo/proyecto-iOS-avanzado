@@ -5,43 +5,86 @@
 //  Created by Pablo Marín Gallardo on 18/10/23.
 //
 
-import Foundation
+import UIKit
 
 class LoginViewModel: LoginViewControllerDelegate {
     
-    // MARK: - Dependencies -
+//    MARK: - Dependencies -
     private let networkManager: NetworkManagerProtocol
     private let secureData: SecureDataManagerProtocol
     
-    // MARK: - Properties -
+//    MARK: - Properties -
     var viewState: ((LoginViewState) -> Void)?
     
-    // MARK: - Initializers -
-    init(networkManager: NetworkManagerProtocol, secureData: SecureDataManagerProtocol) {
+//    MARK: - Initializers -
+    init(
+        networkManager: NetworkManagerProtocol,
+        secureData: SecureDataManagerProtocol
+    ) {
         self.networkManager = networkManager
         self.secureData = secureData
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(onLoginResponse),
+            name: NotificationCenter.loginNotification,
+            object: nil
+        )
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     
-    // MARK: - Public functions -
+//    MARK: - Public functions -
     func onLoginPressed(email: String?, password: String?) {
         viewState?(.loading(true))
         
-        guard let email, !email.isEmpty else {
-            return
-        }
-        print("Email: \(email)")
-        guard let password, !password.isEmpty else {
-            return
-        }
-        print("Password: \(password)")
-        networkManager.login(email: email, password: password) { token, error in
-            if let token {
-                self.secureData.save(token: token)
-                print("Login correcto: \(token)")
-            } else {
-                print("Login incorrecto")
+        DispatchQueue.global().async {
+            guard self.isValid(email: email) else {
+                self.viewState?(.loading(false))
+                self.viewState?(.showErrorEmail("Indique un email válido."))
+                return
             }
+            
+            guard self.isValid(password: password) else {
+                self.viewState?(.loading(false))
+                self.viewState?(.showErrorPassword("Contraseña incorrecta."))
+                return
+            }
+            
+            self.doLoginWith(
+                email: email ?? "",
+                password: password ?? ""
+            )
         }
+    }
+    
+    @objc func onLoginResponse(_ notification: Notification) {
+        guard let token = notification.userInfo?[NotificationCenter.tokenKey] as? String,
+            !token.isEmpty else {
+            return
+        }
+        
+        secureData.save(token: token)
+        print("\(token)")
+        viewState?(.loading(false))
+        DispatchQueue.main.async {
+            self.viewState?(.navigateToNext)
+            
+        }
+    }
+    
+    private func isValid(email: String?) -> Bool {
+        email?.isEmpty == false && (email?.contains("@") ?? false)
+    }
+    
+    private func isValid(password: String?) -> Bool {
+        password?.isEmpty == false && (password?.count ?? 0) >= 4
+    }
+    
+    private func doLoginWith(email: String, password: String) {
+        networkManager.login(email: email, password: password)
     }
 }

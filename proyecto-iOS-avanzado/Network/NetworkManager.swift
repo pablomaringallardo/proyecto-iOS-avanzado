@@ -7,10 +7,12 @@
 
 import Foundation
 
+// MARK: - Protocolo -
 protocol NetworkManagerProtocol {
-    func login(email: String, password: String, completion: @escaping (String?, Error?) -> Void)
+    func login(email: String, password: String)
 }
 
+// MARK: - Enums -
 enum NetworkError: Error {
     case malformedUrl
     case noData
@@ -26,50 +28,59 @@ enum Endpoint: String {
     case login = "api/auth/login"
 }
 
+
+// MARK: - Clase -
 class NetworkManager: NetworkManagerProtocol {
     
-    static let shared = NetworkManager()
+//    MARK: - Constants -
+    
     static private let baseUrl = "https://dragonball.keepcoding.education/"
     
-    func login(email: String, password: String, completion: @escaping (String?, Error?) -> Void) {
-        
+    
+//    MARK: - NetworkManagerProtocol -
+    
+    func login(email: String, password: String) {
         guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.login.rawValue)") else {
-            completion(nil, NetworkError.malformedUrl)
             return
         }
         
-        let loginString = "\(email):\(password)"
-        let loginData: Data = loginString.data(using: .utf8)!
-        let base64 = loginData.base64EncodedString()
+        guard let loginData = String(format: "%@:%@",
+                                     email, password).data(using: .utf8)?.base64EncodedString() else {
+            return
+        }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = HttpMethods.post.rawValue
-        urlRequest.setValue("Basic \(base64)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Basic \(loginData)", forHTTPHeaderField: "Authorization")
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            
             guard error == nil else {
-                completion(nil, error)
+//                TODO: Enviar notificacion indicando el error
                 return
             }
             
-            guard let data = data else {
-                completion(nil, NetworkError.noData)
+            guard let data,
+                  (response as? HTTPURLResponse)?.statusCode == 200 else {
+//                TODO: Enviar notificacion indicando response error
                 return
             }
             
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                let statusCode = (response as? HTTPURLResponse)?.statusCode
-                completion(nil, NetworkError.statusCode(code: statusCode))
+            guard let responseData = String(data: data, encoding: .utf8) else {
+//                TODO: Enviar notificacion indicando response vacío
                 return
             }
             
-            guard let token = String(data: data, encoding: .utf8) else {
-                completion(nil, NetworkError.decodingFailed)
-                return
-            }
-            
-            completion(token, nil)
-        }
-        task.resume()
+            NotificationCenter.default.post(
+                name: NotificationCenter.loginNotification,
+                object: nil,
+                userInfo: [NotificationCenter.tokenKey: responseData]
+            )
+        }.resume()
     }
+}
+
+extension NotificationCenter {
+    static let loginNotification = Notification.Name("NOTIFICATION_LOGIN")
+    static let tokenKey = "TOKEN"
 }

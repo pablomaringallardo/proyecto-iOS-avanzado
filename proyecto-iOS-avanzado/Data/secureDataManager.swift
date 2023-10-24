@@ -27,4 +27,8 @@ final class SecureDataManager: SecureDataManagerProtocol {
     func getToken() -> String? {
         keychain.get(Key.token.rawValue)
     }
+    
+    func deleteToken() {
+        keychain.delete(Key.token.rawValue)
+    }
 }

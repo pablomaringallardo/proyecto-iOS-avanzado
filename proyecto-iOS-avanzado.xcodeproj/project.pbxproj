@@ -18,6 +18,13 @@
 		A312E2F12AE0435E003D72EB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312E2F02AE0435E003D72EB /* LoginViewModel.swift */; };
 		A312E2F52AE04541003D72EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312E2F32AE04541003D72EB /* LoginViewController.swift */; };
 		A312E2F62AE04541003D72EB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A312E2F42AE04541003D72EB /* LoginViewController.xib */; };
+		A33FC55D2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FC55B2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift */; };
+		A33FC55E2AE6C52F00BCE108 /* ListHeroesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A33FC55C2AE6C52F00BCE108 /* ListHeroesTableViewCell.xib */; };
+		A3504D1E2AE7DB90006CC665 /* HeroDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3504D1D2AE7DB90006CC665 /* HeroDAO.swift */; };
+		A3504D202AE7DFA1006CC665 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3504D1F2AE7DFA1006CC665 /* CoreDataStack.swift */; };
+		A380D7522AE2EC2E00A6A9FD /* ListHeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380D7502AE2EC2E00A6A9FD /* ListHeroesTableViewController.swift */; };
+		A380D7532AE2EC2E00A6A9FD /* ListHeroesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A380D7512AE2EC2E00A6A9FD /* ListHeroesTableViewController.xib */; };
+		A380D7552AE2EC4100A6A9FD /* ListHeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380D7542AE2EC4100A6A9FD /* ListHeroesViewModel.swift */; };
 		A3C976312AE176F800212EE1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C976302AE176F800212EE1 /* NetworkManager.swift */; };
 		A3C976342AE17F9100212EE1 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C976332AE17F9100212EE1 /* KeychainSwift */; };
 		A3C976362AE1820400212EE1 /* secureDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C976352AE1820400212EE1 /* secureDataManager.swift */; };
@@ -56,6 +63,13 @@
 		A312E2F02AE0435E003D72EB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A312E2F32AE04541003D72EB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A312E2F42AE04541003D72EB /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A33FC55B2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesTableViewCell.swift; sourceTree = "<group>"; };
+		A33FC55C2AE6C52F00BCE108 /* ListHeroesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListHeroesTableViewCell.xib; sourceTree = "<group>"; };
+		A3504D1D2AE7DB90006CC665 /* HeroDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDAO.swift; sourceTree = "<group>"; };
+		A3504D1F2AE7DFA1006CC665 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		A380D7502AE2EC2E00A6A9FD /* ListHeroesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesTableViewController.swift; sourceTree = "<group>"; };
+		A380D7512AE2EC2E00A6A9FD /* ListHeroesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListHeroesTableViewController.xib; sourceTree = "<group>"; };
+		A380D7542AE2EC4100A6A9FD /* ListHeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeroesViewModel.swift; sourceTree = "<group>"; };
 		A3C976302AE176F800212EE1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A3C976352AE1820400212EE1 /* secureDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secureDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,8 +212,10 @@
 		A312E2EA2AE0431F003D72EB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A3504D1C2AE7DB7A006CC665 /* Models */,
 				A312E2B92AE04209003D72EB /* proyecto_iOS_avanzado.xcdatamodeld */,
 				A3C976352AE1820400212EE1 /* secureDataManager.swift */,
+				A3504D1F2AE7DFA1006CC665 /* CoreDataStack.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -207,10 +223,63 @@
 		A312E2F22AE04416003D72EB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A380D74C2AE2EBF400A6A9FD /* ListHeroes */,
 				A312E2E72AE04301003D72EB /* Launch */,
 				A312E2E32AE042E2003D72EB /* Login */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A33FC5592AE6C4D500BCE108 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A33FC55B2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift */,
+				A33FC55C2AE6C52F00BCE108 /* ListHeroesTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A3504D1C2AE7DB7A006CC665 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3504D1D2AE7DB90006CC665 /* HeroDAO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A380D74C2AE2EBF400A6A9FD /* ListHeroes */ = {
+			isa = PBXGroup;
+			children = (
+				A33FC5592AE6C4D500BCE108 /* Cell */,
+				A380D74F2AE2EC1400A6A9FD /* View */,
+				A380D74E2AE2EC0E00A6A9FD /* Controller */,
+				A380D74D2AE2EC0700A6A9FD /* ViewModel */,
+			);
+			path = ListHeroes;
+			sourceTree = "<group>";
+		};
+		A380D74D2AE2EC0700A6A9FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A380D7542AE2EC4100A6A9FD /* ListHeroesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A380D74E2AE2EC0E00A6A9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A380D7502AE2EC2E00A6A9FD /* ListHeroesTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A380D74F2AE2EC1400A6A9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A380D7512AE2EC2E00A6A9FD /* ListHeroesTableViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A3C9762F2AE176A100212EE1 /* Network */ = {
@@ -331,7 +400,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33FC55E2AE6C52F00BCE108 /* ListHeroesTableViewCell.xib in Resources */,
 				A312E2C02AE0420B003D72EB /* LaunchScreen.storyboard in Resources */,
+				A380D7532AE2EC2E00A6A9FD /* ListHeroesTableViewController.xib in Resources */,
 				A312E2BD2AE0420B003D72EB /* Assets.xcassets in Resources */,
 				A312E2F62AE04541003D72EB /* LoginViewController.xib in Resources */,
 			);
@@ -361,10 +432,15 @@
 				A3C976362AE1820400212EE1 /* secureDataManager.swift in Sources */,
 				A3C976312AE176F800212EE1 /* NetworkManager.swift in Sources */,
 				A312E2BB2AE04209003D72EB /* proyecto_iOS_avanzado.xcdatamodeld in Sources */,
+				A3504D202AE7DFA1006CC665 /* CoreDataStack.swift in Sources */,
 				A312E2B12AE04209003D72EB /* AppDelegate.swift in Sources */,
 				A312E2F12AE0435E003D72EB /* LoginViewModel.swift in Sources */,
+				A3504D1E2AE7DB90006CC665 /* HeroDAO.swift in Sources */,
+				A33FC55D2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift in Sources */,
 				A312E2F52AE04541003D72EB /* LoginViewController.swift in Sources */,
 				A312E2B32AE04209003D72EB /* SceneDelegate.swift in Sources */,
+				A380D7522AE2EC2E00A6A9FD /* ListHeroesTableViewController.swift in Sources */,
+				A380D7552AE2EC4100A6A9FD /* ListHeroesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

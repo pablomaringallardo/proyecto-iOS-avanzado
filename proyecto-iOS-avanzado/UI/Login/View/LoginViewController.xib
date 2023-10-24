@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6.dragon-ball-z-logo-png-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="cVU-z4-Al6">
-                    <rect key="frame" x="0.0" y="109" width="393" height="200"/>
+                    <rect key="frame" x="0.0" y="148" width="393" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="3s7-BQ-AHt"/>
                     </constraints>
@@ -104,7 +104,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yW5-wF-Tey" secondAttribute="bottom" constant="180" id="8sa-iN-saK"/>
                 <constraint firstAttribute="bottom" secondItem="8zf-di-SqF" secondAttribute="bottom" id="FZl-Qz-u3P"/>
                 <constraint firstItem="3aQ-Yy-zUs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="KpU-bQ-Yrv"/>
-                <constraint firstItem="cVU-z4-Al6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="MFJ-pW-tjh"/>
+                <constraint firstItem="cVU-z4-Al6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="89" id="MFJ-pW-tjh"/>
                 <constraint firstItem="yW5-wF-Tey" firstAttribute="top" secondItem="3aQ-Yy-zUs" secondAttribute="bottom" constant="60" id="QvC-NF-vZD"/>
                 <constraint firstItem="8zf-di-SqF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YoI-kx-ekI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3aQ-Yy-zUs" secondAttribute="trailing" constant="32" id="d8g-8H-fIk"/>

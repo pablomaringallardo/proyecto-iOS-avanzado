@@ -23,7 +23,7 @@ enum LoginViewState {
 
 // MARK: - CLASS -
 class LoginViewController: UIViewController {
-
+    
     // MARK: - Outlets -
     @IBOutlet weak var imageLoginView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
@@ -35,11 +35,12 @@ class LoginViewController: UIViewController {
     
     // MARK: - Actions -
     @IBAction func buttonLoginAction(_ sender: Any) {
-        //Obtener email y password y enviarlos al servicio del api login
-        print("Funciona")
-        viewModel?.onLoginPressed(email: emailTextField.text, password: passwordTextField.text)
+        viewModel?.onLoginPressed(
+            email: emailTextField.text,
+            password: passwordTextField.text
+        )
     }
-
+    
     // MARK: - Public Properties -
     var viewModel: LoginViewControllerDelegate?
     
@@ -52,8 +53,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
+        setObserver()
         emailTextField.text = "pablomaringallardo17@gmail.com"
         passwordTextField.text = "123456"
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,37 +100,39 @@ class LoginViewController: UIViewController {
     
     private func setObserver() {
         viewModel?.viewState = { [weak self] state in
-            switch state {
+            DispatchQueue.main.async {
+                switch state {
                 case .loading(let isLoading):
                     self?.loadingView.isHidden = !isLoading
-                
+                    
                 case .showErrorEmail(let error):
                     self?.emailMessageError.text = error
                     self?.emailMessageError.isHidden = (error == nil || error?.isEmpty == true)
-                
+                    
                 case .showErrorPassword(let error):
                     self?.passwordMessageError.text = error
                     self?.passwordMessageError.isHidden = (error == nil || error?.isEmpty == true)
-                
+                    
                 case .navigateToNext:
-                    self?.loadingView.isHidden = true
-                    // TODO: Navegar a la siguiente vista
+                    self?.navigationController?.setViewControllers([ListHeroesTableViewController()], animated: true)
+                }
             }
         }
     }
 }
-
-// MARK: - EXTENSION -
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        switch FieldType(rawValue: textField.tag) {
-        case .email:
+    
+    // MARK: - EXTENSION -
+    extension LoginViewController: UITextFieldDelegate {
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            switch FieldType(rawValue: textField.tag) {
+            case .email:
                 emailMessageError.isHidden = true
-            
-        case .password:
+                
+            case .password:
                 passwordMessageError.isHidden = true
-            
+                
             default: break
+            }
         }
     }
-}
+

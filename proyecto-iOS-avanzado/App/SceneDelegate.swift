@@ -18,8 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         
         let loginViewController = LoginViewController()
-        loginViewController.viewModel = LoginViewModel(networkManager: NetworkManager(), secureData: SecureDataManager())
-        window.rootViewController = loginViewController
+        loginViewController.viewModel = LoginViewModel(
+            networkManager: NetworkManager(),
+            secureData: SecureDataManager()
+        )
+        
+        let listHeroesViewController = ListHeroesTableViewController()
+        
+        window.rootViewController = UINavigationController(
+            rootViewController: SecureDataManager().getToken() == nil ? loginViewController : listHeroesViewController
+        )
         window.makeKeyAndVisible()
         self.window = window
     }
