@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ListHeroesTableViewCell: UITableViewCell {
     
     static let identifier: String = "ListHeroesTableViewCell"
-    static let estimatedHeight: CGFloat = 200
+    static let estimatedHeight: CGFloat = 100
     
-    @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var imageViewCell: UIImageView!
     @IBOutlet weak var nameLabelCell: UILabel!
     @IBOutlet weak var descriptionLabelCell: UILabel!
@@ -26,13 +26,7 @@ class ListHeroesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        viewCell.layer.cornerRadius = 8
-        viewCell.layer.shadowColor = UIColor.gray.cgColor
-        viewCell.layer.shadowOffset = .zero
-        viewCell.layer.shadowRadius = 8
-        viewCell.layer.shadowOpacity = 0.4
-        
+                
         selectionStyle = .none
     }
 
@@ -43,8 +37,7 @@ class ListHeroesTableViewCell: UITableViewCell {
     ) {
         self.nameLabelCell.text = name
         self.descriptionLabelCell.text = description
-        
-//        TODO: Descargar imagen y setearla en el ImageView
+        self.imageViewCell.kf.setImage(with: URL(string: photo ?? ""))
     }
     
 }

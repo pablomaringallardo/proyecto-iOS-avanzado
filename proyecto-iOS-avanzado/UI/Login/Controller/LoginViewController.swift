@@ -114,7 +114,9 @@ class LoginViewController: UIViewController {
                     self?.passwordMessageError.isHidden = (error == nil || error?.isEmpty == true)
                     
                 case .navigateToNext:
-                    self?.navigationController?.setViewControllers([ListHeroesTableViewController()], animated: true)
+                    let listHeroesView = ListHeroesTableViewController()
+                    listHeroesView.viewModel = ListHeroesViewModel(networkManager: NetworkManager(), secureDataManager: SecureDataManager())
+                    self?.navigationController?.setViewControllers([listHeroesView], animated: true)
                 }
             }
         }

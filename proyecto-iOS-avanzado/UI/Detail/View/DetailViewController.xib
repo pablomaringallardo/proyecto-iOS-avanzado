@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="proyecto_iOS_avanzado" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="CWG-tL-XiR" id="4Sj-sd-mZa"/>
+                <outlet property="mapViewDetail" destination="CXJ-dt-0bV" id="Q7j-Ko-xvq"/>
+                <outlet property="nameLabelDetail" destination="UQ5-NC-Q1j" id="xQN-Sg-uFq"/>
+                <outlet property="textView" destination="5b7-Kp-G0F" id="vlM-ly-6BH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXJ-dt-0bV">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="465"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="CXJ-dt-0bV" secondAttribute="height" multiplier="131:155" id="6OL-Tx-vtk"/>
+                    </constraints>
+                    <standardMapConfiguration key="preferredConfiguration"/>
+                </mapView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWG-tL-XiR">
+                    <rect key="frame" x="273" y="361" width="104" height="104"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="CWG-tL-XiR" secondAttribute="height" multiplier="1:1" id="2OX-Ja-upn"/>
+                        <constraint firstAttribute="height" constant="104" id="WIw-wK-Fdb"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-NC-Q1j">
+                    <rect key="frame" x="16" y="485" width="361" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="yCj-fv-z67"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b7-Kp-G0F">
+                    <rect key="frame" x="16" y="526" width="361" height="300"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CXJ-dt-0bV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0ak-7T-7Cs"/>
+                <constraint firstItem="5b7-Kp-G0F" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3xs-pf-2jl"/>
+                <constraint firstItem="UQ5-NC-Q1j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Cca-hm-PnD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5b7-Kp-G0F" secondAttribute="trailing" constant="16" id="NGz-lV-3d3"/>
+                <constraint firstItem="CWG-tL-XiR" firstAttribute="bottom" secondItem="CXJ-dt-0bV" secondAttribute="bottom" id="S6M-VO-nZR"/>
+                <constraint firstItem="CXJ-dt-0bV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ULw-dH-Ey2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CWG-tL-XiR" secondAttribute="trailing" constant="16" id="YVf-kM-kq5"/>
+                <constraint firstItem="CXJ-dt-0bV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a8H-bl-Jbt"/>
+                <constraint firstItem="5b7-Kp-G0F" firstAttribute="top" secondItem="UQ5-NC-Q1j" secondAttribute="bottom" constant="20" id="bWV-yg-xyu"/>
+                <constraint firstItem="UQ5-NC-Q1j" firstAttribute="top" secondItem="CXJ-dt-0bV" secondAttribute="bottom" constant="20" id="guT-Kl-jE6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UQ5-NC-Q1j" secondAttribute="trailing" constant="16" id="oF4-7z-VUi"/>
+                <constraint firstItem="5b7-Kp-G0F" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="8" id="yGO-sn-FOM"/>
+            </constraints>
+            <point key="canvasLocation" x="96.946564885496173" y="-12.67605633802817"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

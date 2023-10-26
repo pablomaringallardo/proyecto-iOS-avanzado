@@ -6,15 +6,40 @@
 //
 
 import UIKit
+import CoreData
 
-protocol ListHeroesTableViewControllerDelegate: AnyObject {
-    func didPressLogout()
+// MARK: - Protocol -
+protocol ListHeroesTableViewControllerDelegate {
+    
+    var viewState: ((HeroesViewState) -> Void)? { get set }
+    var heroesCount: Int { get }
+    var heroes: Heroes { get set }
+    
+    func onViewAppear()
+    func heroBy(index: Int) -> Hero?
+    func logOut()
+    func deleteCoreData()
 }
 
+// MARK: - View State -
+enum HeroesViewState {
+    case updateData
+    case navigateToLogin
+    case navigateToNext(_ hero: Hero)
+}
+
+// MARK: - Class -
 class ListHeroesTableViewController: UITableViewController {
     
+    //    MARK: - Public Properties -
+    var viewModel: ListHeroesTableViewControllerDelegate?
+    
+    //    MARK: - Lifecyle -
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViews()
+        setObserver()
+        viewModel?.onViewAppear()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,18 +51,66 @@ class ListHeroesTableViewController: UITableViewController {
             action: #selector(onLogOutPressed)
         )
         
+        let deleteCoreData = UIBarButtonItem(
+            image: UIImage(systemName: "trash"),
+            style: .plain,
+            target: self,
+            action: #selector(onDeleteCoreDataPressed)
+        )
+        
+        
         navigationItem.rightBarButtonItems = [logOutButton]
+        navigationItem.leftBarButtonItem = deleteCoreData
+        navigationItem.title = "Lista de héroes"
     }
     
+    //    MARK: - Public functions -
     @objc func onLogOutPressed() {
-        SecureDataManager().deleteToken()
+        viewModel?.logOut()
+        viewModel?.viewState?(.navigateToLogin)
     }
     
+    @objc func onDeleteCoreDataPressed() {
+        viewModel?.deleteCoreData()
+        viewModel?.viewState?(.updateData)
+    }
+    
+    //    MARK: - Private functions -
     private func initViews() {
         tableView.register(
             UINib(nibName: ListHeroesTableViewCell.identifier, bundle: nil),
             forCellReuseIdentifier: ListHeroesTableViewCell.identifier
         )
+    }
+    
+    private func setObserver() {
+        viewModel?.viewState = { [weak self] state in
+            DispatchQueue.main.async {
+                switch state {
+                    
+                case .updateData:
+                    self?.tableView.reloadData()
+                    
+                case .navigateToLogin:
+                    let loginViewController = LoginViewController()
+                    loginViewController.viewModel = LoginViewModel(
+                        networkManager: NetworkManager(),
+                        secureData: SecureDataManager()
+                    )
+                    self?.navigationController?.setViewControllers([loginViewController], animated: true)
+                    
+                case .navigateToNext(let hero):
+                    let detailViewController = DetailViewController()
+                    detailViewController.viewModel = DetailViewModel(
+                        hero: hero,
+                        networkManager: NetworkManager(),
+                        secureDataManager: SecureDataManager()
+                    )
+                    self?.navigationController?.pushViewController(detailViewController, animated: true)
+                }
+            }
+            
+        }
     }
 }
 
@@ -45,10 +118,10 @@ class ListHeroesTableViewController: UITableViewController {
 
 extension ListHeroesTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        viewModel?.heroesCount ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         ListHeroesTableViewCell.estimatedHeight
     }
     
@@ -60,12 +133,21 @@ extension ListHeroesTableViewController {
             return UITableViewCell()
         }
         
-//        TODO: Llamar a cell.update
+        if let hero = viewModel?.heroBy(index: indexPath.row) {
+            cell.updateView(
+                name: hero.name,
+                photo: hero.photo,
+                description: hero.description
+            )
+        }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        TODO: Navegar a la vista del detalle
+        if let hero = self.viewModel?.heroes[indexPath.row] {
+            self.viewModel?.viewState?(.navigateToNext(hero))
+        }
     }
 }
 

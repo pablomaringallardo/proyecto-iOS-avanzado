@@ -24,6 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         
         let listHeroesViewController = ListHeroesTableViewController()
+        listHeroesViewController.viewModel = ListHeroesViewModel(
+            networkManager: .init(),
+            secureDataManager: SecureDataManager()
+        )
         
         window.rootViewController = UINavigationController(
             rootViewController: SecureDataManager().getToken() == nil ? loginViewController : listHeroesViewController

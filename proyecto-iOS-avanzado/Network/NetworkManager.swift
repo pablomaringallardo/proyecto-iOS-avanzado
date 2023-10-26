@@ -10,6 +10,8 @@ import Foundation
 // MARK: - Protocolo -
 protocol NetworkManagerProtocol {
     func login(email: String, password: String)
+    func getHeroes(name: String?, token: String, completion: ((Heroes) -> Void)?)
+    func getLocations(heroId: String?, token: String, completion: (([HeroLocation]) -> Void)?)
 }
 
 // MARK: - Enums -
@@ -26,6 +28,8 @@ enum HttpMethods: String {
 
 enum Endpoint: String {
     case login = "api/auth/login"
+    case heroes = "api/heros/all"
+    case heroLocation = "api/heros/locations"
 }
 
 
@@ -33,12 +37,10 @@ enum Endpoint: String {
 class NetworkManager: NetworkManagerProtocol {
     
 //    MARK: - Constants -
-    
     static private let baseUrl = "https://dragonball.keepcoding.education/"
     
     
 //    MARK: - NetworkManagerProtocol -
-    
     func login(email: String, password: String) {
         guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.login.rawValue)") else {
             return
@@ -76,6 +78,85 @@ class NetworkManager: NetworkManagerProtocol {
                 object: nil,
                 userInfo: [NotificationCenter.tokenKey: responseData]
             )
+        }.resume()
+    }
+    
+    func getHeroes(name: String?, token: String, completion: ((Heroes) -> Void)?) {
+        guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.heroLocation.rawValue)") else {
+            return
+        }
+        
+        let jsonData: [String: Any] = ["name": name ?? ""]
+        let jsonParameters = try? JSONSerialization.data(withJSONObject: jsonData)
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HttpMethods.post.rawValue
+        urlRequest.setValue("application/json; charset=utf-8",
+                            forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(token)",
+                            forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = jsonParameters
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            
+            guard error == nil else {
+                completion?([])
+                return
+            }
+            
+            guard let data,
+                  (response as? HTTPURLResponse)?.statusCode == 200 else {
+                completion?([])
+                return
+            }
+            
+            guard let heroes = try? JSONDecoder().decode(Heroes.self, from: data) else {
+                completion?([])
+                return
+            }
+            
+            completion?(heroes)
+            
+        }.resume()
+    }
+    
+    func getLocations(heroId: String?, token: String, completion: (([HeroLocation]) -> Void)?) {
+        guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.heroes.rawValue)") else {
+            return
+        }
+        
+        let jsonData: [String: Any] = ["id": heroId ?? ""]
+        let jsonParameters = try? JSONSerialization.data(withJSONObject: jsonData)
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = HttpMethods.post.rawValue
+        urlRequest.setValue("application/json; charset=utf-8",
+                            forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(token)",
+                            forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = jsonParameters
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            
+            guard error == nil else {
+                completion?([])
+                return
+            }
+            
+            guard let data,
+                  (response as? HTTPURLResponse)?.statusCode == 200 else {
+                completion?([])
+                return
+            }
+            
+            guard let locations = try? JSONDecoder().decode([HeroLocation].self, from: data) else {
+                completion?([])
+                return
+            }
+            
+            print("API RESPONSE LOCATIONS: \(locations)")
+            completion?(locations)
+            
         }.resume()
     }
 }
