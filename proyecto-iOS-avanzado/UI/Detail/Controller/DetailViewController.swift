@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
     }
     
     private func initViews() {
-        
+        mapViewDetail.delegate = self
     }
     
     private func setObserver() {
@@ -58,5 +58,24 @@ class DetailViewController: UIViewController {
         imageView.kf.setImage(with: URL(string: hero?.photo ?? ""))
         nameLabelDetail.text = hero?.name
         textView.text = hero?.description
+        
+        heroLocations.forEach {
+            mapViewDetail.addAnnotation(
+                HeroAnnotation(
+                    title: hero?.name,
+                    info: hero?.id,
+                    coordinate: .init(
+                        latitude: Double($0.latitud ?? "") ?? 0.0,
+                        longitude: Double($0.longitud ?? "") ?? 0.0
+                    )
+                )
+            )
+        }
+    }
+}
+
+extension DetailViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        return nil
     }
 }

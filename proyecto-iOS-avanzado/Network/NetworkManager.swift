@@ -82,7 +82,7 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     func getHeroes(name: String?, token: String, completion: ((Heroes) -> Void)?) {
-        guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.heroLocation.rawValue)") else {
+        guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.heroes.rawValue)") else {
             return
         }
         
@@ -121,7 +121,7 @@ class NetworkManager: NetworkManagerProtocol {
     }
     
     func getLocations(heroId: String?, token: String, completion: (([HeroLocation]) -> Void)?) {
-        guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.heroes.rawValue)") else {
+        guard let url = URL(string: "\(NetworkManager.baseUrl)\(Endpoint.heroLocation.rawValue)") else {
             return
         }
         
@@ -153,8 +153,6 @@ class NetworkManager: NetworkManagerProtocol {
                 completion?([])
                 return
             }
-            
-            print("API RESPONSE LOCATIONS: \(locations)")
             completion?(locations)
             
         }.resume()

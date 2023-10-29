@@ -68,7 +68,6 @@ class LoginViewModel: LoginViewControllerDelegate {
         }
         
         secureData.save(token: token)
-        print("\(token)")
         viewState?(.loading(false))
         DispatchQueue.main.async {
             self.viewState?(.navigateToNext)

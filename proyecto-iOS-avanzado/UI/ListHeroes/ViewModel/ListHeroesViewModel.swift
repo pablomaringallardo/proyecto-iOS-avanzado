@@ -20,7 +20,7 @@ class ListHeroesViewModel: ListHeroesTableViewControllerDelegate {
     var heroesCount: Int {
         heroes.count
     }
-     var heroes: Heroes = []
+    var heroes: Heroes = []
     
     //    MARK: - Initializers -
     init(
@@ -49,21 +49,18 @@ class ListHeroesViewModel: ListHeroesTableViewControllerDelegate {
     }
     
     func fetchHeroesApiOrCoreData(token: String) {
-        let context = CoreDataStack.shared.persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<HeroDAO> = HeroDAO.fetchRequest()
-        do {
-            let heroes = try context.fetch(fetchRequest)
+        let heroes = Global.shared.getHeroesCoreData(context: Global.shared.context)
             if heroes.count > 0 {
                 heroes.forEach { hero in
                     self.heroes.append(Hero(
                         id: hero.id,
-                        name: hero.name,
+                        name: hero.name ?? "",
                         photo: hero.photo,
                         description: hero.heroDescription,
                         isFavorite: hero.favorite)
                     )
                 }
-                print("API")
+                print("COREDATA")
             } else {
                 self.networkManager.getHeroes(name: nil,
                                               token: token) { heroes in
@@ -72,27 +69,19 @@ class ListHeroesViewModel: ListHeroesTableViewControllerDelegate {
                     
                     
                     self.heroes.forEach { hero in
-                        let newHero = HeroDAO(context: context)
+                        let newHero = HeroDAO(context: Global.shared.context)
                         newHero.id = hero.id
                         newHero.name = hero.name
                         newHero.heroDescription = hero.description
                         newHero.photo = hero.photo
                         newHero.favorite = hero.isFavorite ?? false
                     }
-                    print("COREDATA")
-                    do {
-                        try context.save()
-                    } catch {
-                        print(error)
-                    }
+                    print("API")
+                    Global.shared.saveCoreData()
                     
                     self.viewState?(.updateData)
                 }
             }
-        } catch {
-            print("Error fetching data: (error)")
-        }
-        
     }
     
     func logOut() {
@@ -113,5 +102,13 @@ class ListHeroesViewModel: ListHeroesTableViewControllerDelegate {
         } catch {
             print("Error al borrar los datos de Core Data")
         }
+    }
+    
+    func filterHeroes(with searchText: String) {
+        
+    }
+    
+    func clearSearch() {
+        
     }
 }

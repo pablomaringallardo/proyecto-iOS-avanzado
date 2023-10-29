@@ -14,7 +14,7 @@
                 <outlet property="emailMessageError" destination="yD5-qm-Kg1" id="uwy-2d-Trc"/>
                 <outlet property="emailTextField" destination="HeD-3q-kPy" id="ZdQ-NC-tor"/>
                 <outlet property="imageLoginView" destination="cVU-z4-Al6" id="BZQ-pb-pbP"/>
-                <outlet property="loadingView" destination="8zf-di-SqF" id="F6K-1s-hoZ"/>
+                <outlet property="loadingView" destination="vbe-H0-hm9" id="f6O-B1-Bka"/>
                 <outlet property="passwordMessageError" destination="3vi-bR-nvM" id="FH6-GG-xB8"/>
                 <outlet property="passwordTextField" destination="NQT-i9-sTf" id="OH6-Kq-v9P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -81,34 +81,34 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zf-di-SqF">
+                <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-H0-hm9">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="atg-WM-v0D">
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3WY-Mj-NW7">
                             <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                             <color key="color" systemColor="systemOrangeColor"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" systemColor="labelColor"/>
                     <constraints>
-                        <constraint firstItem="atg-WM-v0D" firstAttribute="centerX" secondItem="8zf-di-SqF" secondAttribute="centerX" id="7h3-eo-lk0"/>
-                        <constraint firstItem="atg-WM-v0D" firstAttribute="centerY" secondItem="8zf-di-SqF" secondAttribute="centerY" id="zwM-fM-PBA"/>
+                        <constraint firstItem="3WY-Mj-NW7" firstAttribute="centerX" secondItem="vbe-H0-hm9" secondAttribute="centerX" id="0bx-wL-7kZ"/>
+                        <constraint firstItem="3WY-Mj-NW7" firstAttribute="centerY" secondItem="vbe-H0-hm9" secondAttribute="centerY" id="P7T-9H-eds"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
-                <constraint firstItem="8zf-di-SqF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4Hd-Ne-7u3"/>
                 <constraint firstItem="cVU-z4-Al6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6gY-Oi-mh5"/>
+                <constraint firstItem="vbe-H0-hm9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8D6-x8-mnL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yW5-wF-Tey" secondAttribute="bottom" constant="180" id="8sa-iN-saK"/>
-                <constraint firstAttribute="bottom" secondItem="8zf-di-SqF" secondAttribute="bottom" id="FZl-Qz-u3P"/>
+                <constraint firstItem="vbe-H0-hm9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Jxq-iz-kRI"/>
                 <constraint firstItem="3aQ-Yy-zUs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="KpU-bQ-Yrv"/>
                 <constraint firstItem="cVU-z4-Al6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="89" id="MFJ-pW-tjh"/>
                 <constraint firstItem="yW5-wF-Tey" firstAttribute="top" secondItem="3aQ-Yy-zUs" secondAttribute="bottom" constant="60" id="QvC-NF-vZD"/>
-                <constraint firstItem="8zf-di-SqF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YoI-kx-ekI"/>
+                <constraint firstAttribute="bottom" secondItem="vbe-H0-hm9" secondAttribute="bottom" id="SMI-5N-S7f"/>
+                <constraint firstItem="vbe-H0-hm9" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YqW-bc-368"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3aQ-Yy-zUs" secondAttribute="trailing" constant="32" id="d8g-8H-fIk"/>
-                <constraint firstItem="8zf-di-SqF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eif-aZ-bs7"/>
                 <constraint firstAttribute="trailing" secondItem="cVU-z4-Al6" secondAttribute="trailing" id="gVz-ro-cef"/>
                 <constraint firstItem="yW5-wF-Tey" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yye-5t-3ax"/>
             </constraints>

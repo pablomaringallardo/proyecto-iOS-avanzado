@@ -3,4 +3,243 @@
    uuid = "2C82F6E7-A6AF-4BC4-B180-E3BCD551CF7D"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28A1BBB8-4EF2-400F-A06D-06454F7572DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "onViewAppear()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "28A1BBB8-4EF2-400F-A06D-06454F7572DC - 639a8909ddcc3e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "proyecto_iOS_avanzado.MapViewModel.onViewAppear() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "28A1BBB8-4EF2-400F-A06D-06454F7572DC - 5e559e063bc5359d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in proyecto_iOS_avanzado.MapViewModel.onViewAppear() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "28A1BBB8-4EF2-400F-A06D-06454F7572DC - 639a8909ddcc3e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "proyecto_iOS_avanzado.MapViewModel.onViewAppear() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "28A1BBB8-4EF2-400F-A06D-06454F7572DC - 639a8909ddcc3e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "proyecto_iOS_avanzado.MapViewModel.onViewAppear() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4162249-5AD1-4DE6-B14E-C3EA8D6A2AAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "proyecto-iOS-avanzado/UI/Map/Controller/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "updateViews(heroLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C4162249-5AD1-4DE6-B14E-C3EA8D6A2AAD - 671e3d48109f32bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (proyecto_iOS_avanzado.LocationDAO) -&gt; () in proyecto_iOS_avanzado.MapViewController.updateViews(heroLocations: Swift.Array&lt;proyecto_iOS_avanzado.LocationDAO&gt;) -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/Controller/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "C4162249-5AD1-4DE6-B14E-C3EA8D6A2AAD - 68db4324ef0c8852"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "proyecto_iOS_avanzado.MapViewController.updateViews(heroLocations: Swift.Array&lt;proyecto_iOS_avanzado.LocationDAO&gt;) -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/Controller/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "C4162249-5AD1-4DE6-B14E-C3EA8D6A2AAD - 671e3d48109f32bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (proyecto_iOS_avanzado.LocationDAO) -&gt; () in proyecto_iOS_avanzado.MapViewController.updateViews(heroLocations: Swift.Array&lt;proyecto_iOS_avanzado.LocationDAO&gt;) -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/Controller/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5CCF911-76FA-4F2A-AEAD-6EC58E8E96FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getLocations()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D5CCF911-76FA-4F2A-AEAD-6EC58E8E96FF - 29dd3b75be5657d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "proyecto_iOS_avanzado.MapViewModel.getLocations() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1164">
+               </Location>
+               <Location
+                  uuid = "D5CCF911-76FA-4F2A-AEAD-6EC58E8E96FF - 29dd3b75be5651c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "proyecto_iOS_avanzado.MapViewModel.getLocations() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/ViewModel/MapViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "944">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73D7E3B6-B0E1-40A2-9BD4-18AD014DD41A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "proyecto-iOS-avanzado/UI/Map/Controller/MapViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "setObserver()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73D7E3B6-B0E1-40A2-9BD4-18AD014DD41A - 239eb3940b1894ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (proyecto_iOS_avanzado.MapViewState) -&gt; () in proyecto_iOS_avanzado.MapViewController.setObserver() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/Controller/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "73D7E3B6-B0E1-40A2-9BD4-18AD014DD41A - 239eb3940b18944f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (proyecto_iOS_avanzado.MapViewState) -&gt; () in proyecto_iOS_avanzado.MapViewController.setObserver() -&gt; ()"
+                  moduleName = "proyecto-iOS-avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/proyecto-iOS-avanzado/UI/Map/Controller/MapViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

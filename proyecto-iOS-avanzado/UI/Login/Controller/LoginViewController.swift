@@ -114,9 +114,17 @@ class LoginViewController: UIViewController {
                     self?.passwordMessageError.isHidden = (error == nil || error?.isEmpty == true)
                     
                 case .navigateToNext:
-                    let listHeroesView = ListHeroesTableViewController()
-                    listHeroesView.viewModel = ListHeroesViewModel(networkManager: NetworkManager(), secureDataManager: SecureDataManager())
-                    self?.navigationController?.setViewControllers([listHeroesView], animated: true)
+                    DispatchQueue.main.async {
+                        
+                        UIApplication
+                            .shared
+                            .connectedScenes
+                            .compactMap{
+                                ($0 as? UIWindowScene)?.keyWindow
+                            }
+                            .first?
+                            .rootViewController = TabBarViewController()
+                    }
                 }
             }
         }

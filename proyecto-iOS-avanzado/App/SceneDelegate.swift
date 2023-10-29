@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let scene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: scene)
+        window = UIWindow(windowScene: scene)
         
         let loginViewController = LoginViewController()
         loginViewController.viewModel = LoginViewModel(
@@ -23,17 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             secureData: SecureDataManager()
         )
         
-        let listHeroesViewController = ListHeroesTableViewController()
-        listHeroesViewController.viewModel = ListHeroesViewModel(
-            networkManager: .init(),
-            secureDataManager: SecureDataManager()
-        )
+        window?.rootViewController = SecureDataManager().getToken() == nil ? loginViewController : TabBarViewController()
         
-        window.rootViewController = UINavigationController(
-            rootViewController: SecureDataManager().getToken() == nil ? loginViewController : listHeroesViewController
-        )
-        window.makeKeyAndVisible()
-        self.window = window
+        window?.makeKeyAndVisible()
+//        self.window = window
     }
 }
 

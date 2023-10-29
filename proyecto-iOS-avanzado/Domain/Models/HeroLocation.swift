@@ -10,8 +10,8 @@ import Foundation
 struct HeroLocation: Codable {
 
     let id: String?
-    let latitude: String?
-    let longitude: String?
-    let date: String?
-    let hero: Hero
+    let latitud: String?
+    let longitud: String?
+    let dateShow: String?
+    let hero: Hero?
 }

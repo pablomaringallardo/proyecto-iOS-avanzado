@@ -29,17 +29,25 @@ enum HeroesViewState {
 }
 
 // MARK: - Class -
-class ListHeroesTableViewController: UITableViewController {
+class ListHeroesTableViewController: UITableViewController, UISearchBarDelegate {
     
     //    MARK: - Public Properties -
     var viewModel: ListHeroesTableViewControllerDelegate?
+    var searchBar: UISearchBar!
     
     //    MARK: - Lifecyle -
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
         setObserver()
+        searchBar = UISearchBar()
+        searchBar.delegate = self
+        searchBar.placeholder = "Buscar"
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
+        //                tableView.tableHeaderView = searchBar
         viewModel?.onViewAppear()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +83,21 @@ class ListHeroesTableViewController: UITableViewController {
         viewModel?.viewState?(.updateData)
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        var herosFiltered: Heroes = []
+        
+        viewModel?.heroes.forEach {
+            if (($0.name?.lowercased().contains(searchText.lowercased())) != nil) {
+                herosFiltered.append($0)
+            }
+        }
+        
+        viewModel?.heroes = []
+//        viewModel?.heroes = herosFiltered
+        viewModel?.viewState?(.updateData)
+    }
+    
     //    MARK: - Private functions -
     private func initViews() {
         tableView.register(
@@ -97,7 +120,17 @@ class ListHeroesTableViewController: UITableViewController {
                         networkManager: NetworkManager(),
                         secureData: SecureDataManager()
                     )
-                    self?.navigationController?.setViewControllers([loginViewController], animated: true)
+                    DispatchQueue.main.async {
+                        
+                        UIApplication
+                            .shared
+                            .connectedScenes
+                            .compactMap{
+                                ($0 as? UIWindowScene)?.keyWindow
+                            }
+                            .first?
+                            .rootViewController = loginViewController
+                    }
                     
                 case .navigateToNext(let hero):
                     let detailViewController = DetailViewController()
@@ -117,6 +150,7 @@ class ListHeroesTableViewController: UITableViewController {
 // MARK: - Table view data source
 
 extension ListHeroesTableViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.heroesCount ?? 0
     }
