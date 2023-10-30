@@ -61,6 +61,9 @@
 		A30479202AEEF5380092B838 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A304791F2AEEF5380092B838 /* Kingfisher */; };
 		A30479222AEEF5410092B838 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A30479212AEEF5410092B838 /* KeychainSwift */; };
 		A30479242AEEF5410092B838 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A30479232AEEF5410092B838 /* Kingfisher */; };
+		A308EECC2AEF148000764ED6 /* ValidationFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A7A42AEF1219000CB645 /* ValidationFieldsTests.swift */; };
+		A308EECD2AEF148200764ED6 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A78F2AEF0D07000CB645 /* NetworkManagerTests.swift */; };
+		A308EECE2AEF148500764ED6 /* MocksNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A79D2AEF0FE4000CB645 /* MocksNetworkManager.swift */; };
 		A312E2B12AE04209003D72EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312E2B02AE04209003D72EB /* AppDelegate.swift */; };
 		A312E2B32AE04209003D72EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312E2B22AE04209003D72EB /* SceneDelegate.swift */; };
 		A312E2BB2AE04209003D72EB /* proyecto_iOS_avanzado.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A312E2B92AE04209003D72EB /* proyecto_iOS_avanzado.xcdatamodeld */; };
@@ -69,19 +72,14 @@
 		A312E2F12AE0435E003D72EB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312E2F02AE0435E003D72EB /* LoginViewModel.swift */; };
 		A312E2F52AE04541003D72EB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312E2F32AE04541003D72EB /* LoginViewController.swift */; };
 		A312E2F62AE04541003D72EB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A312E2F42AE04541003D72EB /* LoginViewController.xib */; };
-		A313A7952AEF0D8A000CB645 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A78F2AEF0D07000CB645 /* NetworkManagerTests.swift */; };
 		A313A7972AEF0DA1000CB645 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A78F2AEF0D07000CB645 /* NetworkManagerTests.swift */; };
 		A313A79F2AEF103C000CB645 /* MocksNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A79D2AEF0FE4000CB645 /* MocksNetworkManager.swift */; };
-		A313A7A02AEF103D000CB645 /* MocksNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A79D2AEF0FE4000CB645 /* MocksNetworkManager.swift */; };
-		A313A7A12AEF108F000CB645 /* MocksNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A79D2AEF0FE4000CB645 /* MocksNetworkManager.swift */; };
-		A313A7A22AEF10F7000CB645 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A78F2AEF0D07000CB645 /* NetworkManagerTests.swift */; };
-		A313A7A52AEF1219000CB645 /* ValidationFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A7A42AEF1219000CB645 /* ValidationFieldsTests.swift */; };
 		A313A7A62AEF1239000CB645 /* ValidationFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A7A42AEF1219000CB645 /* ValidationFieldsTests.swift */; };
-		A313A7A72AEF1239000CB645 /* ValidationFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A7A42AEF1219000CB645 /* ValidationFieldsTests.swift */; };
 		A33FC55D2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FC55B2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift */; };
 		A33FC55E2AE6C52F00BCE108 /* ListHeroesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A33FC55C2AE6C52F00BCE108 /* ListHeroesTableViewCell.xib */; };
 		A3504D202AE7DFA1006CC665 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3504D1F2AE7DFA1006CC665 /* CoreDataStack.swift */; };
 		A3504D242AE839BD006CC665 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3504D232AE839BD006CC665 /* Hero.swift */; };
+		A35AD9322AEFCCB5002D63A4 /* MocksNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A313A79D2AEF0FE4000CB645 /* MocksNetworkManager.swift */; };
 		A380D7522AE2EC2E00A6A9FD /* ListHeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380D7502AE2EC2E00A6A9FD /* ListHeroesTableViewController.swift */; };
 		A380D7532AE2EC2E00A6A9FD /* ListHeroesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A380D7512AE2EC2E00A6A9FD /* ListHeroesTableViewController.xib */; };
 		A380D7552AE2EC4100A6A9FD /* ListHeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380D7542AE2EC4100A6A9FD /* ListHeroesViewModel.swift */; };
@@ -120,16 +118,16 @@
 		A30082BA2AEC13B90023E95A /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		A30082BD2AEC1A5D0023E95A /* LocationDAO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationDAO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A303A7AD2AE9A2FC007E296F /* HeroDAO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroDAO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A312E2AD2AE04209003D72EB /* proyecto-iOS-avanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "proyecto-iOS-avanzado.app"; path = "/Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/build/Debug-iphoneos/proyecto-iOS-avanzado.app"; sourceTree = "<absolute>"; };
+		A308EEC82AEF13C800764ED6 /* proyecto-iOS-avanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "proyecto-iOS-avanzado.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A308EEC92AEF13C800764ED6 /* proyecto-iOS-avanzadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "proyecto-iOS-avanzadoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A308EECA2AEF13C800764ED6 /* proyecto-iOS-avanzadoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "proyecto-iOS-avanzadoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A312E2B02AE04209003D72EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A312E2B22AE04209003D72EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A312E2BA2AE04209003D72EB /* proyecto_iOS_avanzado.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = proyecto_iOS_avanzado.xcdatamodel; sourceTree = "<group>"; };
 		A312E2BC2AE0420B003D72EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A312E2BF2AE0420B003D72EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A312E2C12AE0420B003D72EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A312E2C62AE0420B003D72EB /* proyecto-iOS-avanzadoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "proyecto-iOS-avanzadoTests.xctest"; path = "/Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/build/Debug-iphoneos/proyecto-iOS-avanzadoTests.xctest"; sourceTree = "<absolute>"; };
 		A312E2CA2AE0420B003D72EB /* proyecto_iOS_avanzadoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = proyecto_iOS_avanzadoTests.swift; sourceTree = "<group>"; };
-		A312E2D02AE0420B003D72EB /* proyecto-iOS-avanzadoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "proyecto-iOS-avanzadoUITests.xctest"; path = "/Users/pablomaringallardo/Desktop/proyecto-iOS-avanzado/build/Debug-iphoneos/proyecto-iOS-avanzadoUITests.xctest"; sourceTree = "<absolute>"; };
 		A312E2D42AE0420B003D72EB /* proyecto_iOS_avanzadoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = proyecto_iOS_avanzadoUITests.swift; sourceTree = "<group>"; };
 		A312E2D62AE0420B003D72EB /* proyecto_iOS_avanzadoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = proyecto_iOS_avanzadoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A312E2F02AE0435E003D72EB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -233,6 +231,9 @@
 				A312E2AF2AE04209003D72EB /* proyecto-iOS-avanzado */,
 				A312E2C92AE0420B003D72EB /* proyecto-iOS-avanzadoTests */,
 				A312E2D32AE0420B003D72EB /* proyecto-iOS-avanzadoUITests */,
+				A308EEC82AEF13C800764ED6 /* proyecto-iOS-avanzado.app */,
+				A308EEC92AEF13C800764ED6 /* proyecto-iOS-avanzadoTests.xctest */,
+				A308EECA2AEF13C800764ED6 /* proyecto-iOS-avanzadoUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -512,7 +513,7 @@
 				A303A7AA2AE95B7C007E296F /* Kingfisher */,
 			);
 			productName = "proyecto-iOS-avanzado";
-			productReference = A312E2AD2AE04209003D72EB /* proyecto-iOS-avanzado.app */;
+			productReference = A308EEC82AEF13C800764ED6 /* proyecto-iOS-avanzado.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A312E2C52AE0420B003D72EB /* proyecto-iOS-avanzadoTests */ = {
@@ -534,7 +535,7 @@
 				A304791F2AEEF5380092B838 /* Kingfisher */,
 			);
 			productName = "proyecto-iOS-avanzadoTests";
-			productReference = A312E2C62AE0420B003D72EB /* proyecto-iOS-avanzadoTests.xctest */;
+			productReference = A308EEC92AEF13C800764ED6 /* proyecto-iOS-avanzadoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A312E2CF2AE0420B003D72EB /* proyecto-iOS-avanzadoUITests */ = {
@@ -556,7 +557,7 @@
 				A30479232AEEF5410092B838 /* Kingfisher */,
 			);
 			productName = "proyecto-iOS-avanzadoUITests";
-			productReference = A312E2D02AE0420B003D72EB /* proyecto-iOS-avanzadoUITests.xctest */;
+			productReference = A308EECA2AEF13C800764ED6 /* proyecto-iOS-avanzadoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -645,17 +646,15 @@
 				A3C976362AE1820400212EE1 /* secureDataManager.swift in Sources */,
 				A3C976312AE176F800212EE1 /* NetworkManager.swift in Sources */,
 				A303A7AF2AE9A2FC007E296F /* HeroDAO+CoreDataProperties.swift in Sources */,
-				A313A7A52AEF1219000CB645 /* ValidationFieldsTests.swift in Sources */,
 				A3E926B32AEADC3C0070EDCB /* HeroAnnotation.swift in Sources */,
 				A312E2BB2AE04209003D72EB /* proyecto_iOS_avanzado.xcdatamodeld in Sources */,
-				A313A7A12AEF108F000CB645 /* MocksNetworkManager.swift in Sources */,
+				A35AD9322AEFCCB5002D63A4 /* MocksNetworkManager.swift in Sources */,
 				A3E926B02AEAA98D0070EDCB /* HeroLocation.swift in Sources */,
 				A3504D202AE7DFA1006CC665 /* CoreDataStack.swift in Sources */,
 				A312E2B12AE04209003D72EB /* AppDelegate.swift in Sources */,
 				A30082B92AEC0E0F0023E95A /* TabBarViewController.swift in Sources */,
 				A312E2F12AE0435E003D72EB /* LoginViewModel.swift in Sources */,
 				A33FC55D2AE6C52F00BCE108 /* ListHeroesTableViewCell.swift in Sources */,
-				A313A7A22AEF10F7000CB645 /* NetworkManagerTests.swift in Sources */,
 				A312E2F52AE04541003D72EB /* LoginViewController.swift in Sources */,
 				A30082B62AEC0D860023E95A /* MapViewModel.swift in Sources */,
 				A312E2B32AE04209003D72EB /* SceneDelegate.swift in Sources */,
@@ -708,26 +707,26 @@
 				A30478F72AEEF2680092B838 /* AppDelegate.swift in Sources */,
 				A30478F12AEEF25D0092B838 /* secureDataManager.swift in Sources */,
 				A304790D2AEEF29F0092B838 /* DetailViewController.swift in Sources */,
-				A313A7952AEF0D8A000CB645 /* NetworkManagerTests.swift in Sources */,
 				A30479152AEEF2AB0092B838 /* TabBarViewController.swift in Sources */,
-				A313A7A02AEF103D000CB645 /* MocksNetworkManager.swift in Sources */,
 				A30478FF2AEEF27B0092B838 /* NetworkManager.swift in Sources */,
 				A30479052AEEF2910092B838 /* ListHeroesTableViewCell.swift in Sources */,
 				A304790F2AEEF2A30092B838 /* DetailViewModel.swift in Sources */,
 				A30479112AEEF2A60092B838 /* MapViewController.swift in Sources */,
 				A30478ED2AEEF2580092B838 /* HeroDAO+CoreDataProperties.swift in Sources */,
-				A313A7A72AEF1239000CB645 /* ValidationFieldsTests.swift in Sources */,
 				A30479072AEEF2950092B838 /* ListHeroesTableViewController.swift in Sources */,
 				A30478F32AEEF2600092B838 /* CoreDataStack.swift in Sources */,
 				A30479032AEEF28E0092B838 /* LoginViewModel.swift in Sources */,
 				A30479092AEEF2980092B838 /* ListHeroesViewModel.swift in Sources */,
 				A304790B2AEEF29C0092B838 /* HeroAnnotation.swift in Sources */,
+				A308EECD2AEF148200764ED6 /* NetworkManagerTests.swift in Sources */,
 				A30478FD2AEEF2770092B838 /* HeroLocation.swift in Sources */,
 				A30479132AEEF2A80092B838 /* MapViewModel.swift in Sources */,
 				A30478F42AEEF2620092B838 /* Global.swift in Sources */,
 				A30478F92AEEF26A0092B838 /* SceneDelegate.swift in Sources */,
 				A30479012AEEF28B0092B838 /* LoginViewController.swift in Sources */,
+				A308EECC2AEF148000764ED6 /* ValidationFieldsTests.swift in Sources */,
 				A30478FA2AEEF2720092B838 /* Hero.swift in Sources */,
+				A308EECE2AEF148500764ED6 /* MocksNetworkManager.swift in Sources */,
 				A30478EF2AEEF25A0092B838 /* LocationDAO+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

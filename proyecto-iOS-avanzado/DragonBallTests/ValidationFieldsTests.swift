@@ -29,15 +29,15 @@ final class ValidationFieldsTests: XCTestCase {
 
     func test_givenValidEmail_whenIsValid_thenTrue() throws {
         let validEmail = "pablomaringallardo17@gmail.com"
-//        let isEmailValid = sut.isValid(email: validEmail)
+        let isEmailValid = sut.isValid(email: validEmail)
 
-//        XCTAssertTrue(isEmailValid)
+        XCTAssertTrue(isEmailValid)
     }
 
     func test_givenValidEmail_whenNotValid_thenFalse() throws {
         let invalidEmail = "pablomaringallardo17gmail.com"
-//        let isEmailValid = sut.isValid(email: invalidEmail)
+        let isEmailValid = sut.isValid(email: invalidEmail)
 
-//        XCTAssertFalse(isEmailValid)
+        XCTAssertFalse(isEmailValid)
     }
 }

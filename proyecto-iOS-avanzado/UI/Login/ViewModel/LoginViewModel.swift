@@ -75,11 +75,11 @@ class LoginViewModel: LoginViewControllerDelegate {
         }
     }
     
-    private func isValid(email: String?) -> Bool {
+    func isValid(email: String?) -> Bool {
         email?.isEmpty == false && (email?.contains("@") ?? false)
     }
     
-    private func isValid(password: String?) -> Bool {
+    func isValid(password: String?) -> Bool {
         password?.isEmpty == false && (password?.count ?? 0) >= 4
     }
     
