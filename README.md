@@ -10,6 +10,9 @@ Este proyecto esta desarrollado en UIKit en el que utilizo las siguiente herrami
 Adjunto algunos screenshot de la app:
 
 # Vista del login
+
+Al abrir la app podemos ver una animación del login en la que solo muestra el logo de Dragon Ball y seguidamente sube hacia arriba (hasta la posición en la que se muestra en el screenshot) y aparecen gradualmente los campos del email y la contraseña.
+
 <img width="356" alt="Captura de pantalla 2023-11-23 a las 17 51 24" src="https://github.com/pablomaringallardo/proyecto-iOS-avanzado/assets/118818112/da23e56f-c352-4e8e-a4da-6e81fec34c00">
 
 # Vista de la home
